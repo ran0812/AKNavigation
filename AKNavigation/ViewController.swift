@@ -18,6 +18,9 @@ class ViewController: AKBaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        let root = AKBaseViewController()
+        let nav = AKNavigationController(rootViewController: root)
     }
 
     @IBOutlet weak var logLabel: UILabel!
