@@ -33,13 +33,17 @@ class ViewController: AKBaseViewController {
     @IBAction func _setNavigationBarBackgroundColor(_ sender: Any) {
         navBarBackgroundColor = .orange
     }
-
-    @IBAction func _setRightImage(_ sender: Any) {
+    
+    @IBAction func _setNavigationBarBackgroundImage(_ sender: Any) {
         
     }
 
+    @IBAction func _setRightImage(_ sender: Any) {
+        rightImage = UIImage(named: "ak_back")
+    }
+
     @IBAction func _setLeftImage(_ sender: Any) {
-        
+        leftImage = UIImage(named: "ak_back")
     }
 
     @IBAction func _setRightTitle(_ sender: Any) {
@@ -61,10 +65,9 @@ class ViewController: AKBaseViewController {
         ]
     }
 
-
     @IBAction func _setLeftItems(_ sender: Any) {
         leftItems = [
-            AKNavigationItem("l1", action: {[unowned self] in
+            AKNavigationItem(UIImage(named: "ak_back"), action: {[unowned self] in
                 self.log("l1 clicked")
             }),
             AKNavigationItem("l2", action: {[unowned self] in
@@ -72,7 +75,6 @@ class ViewController: AKBaseViewController {
             })
         ]
     }
-
 
     @IBAction func _setRightColor(_ sender: Any) {
         rightButtonColor = .red
@@ -82,10 +84,18 @@ class ViewController: AKBaseViewController {
         leftButtonColor = .red
     }
     
-    @IBAction func _pushNewPage(_ sender: Any) {
-        navigationController?.pushViewController(ViewController(), animated: true)
+    @IBAction func _changeStatusBarStyle(_ sender: Any) {
+        if statusBarStyle == .dark {
+            statusBarStyle = .light
+        } else {
+            statusBarStyle = .dark
+        }
     }
     
+    @IBAction func _hideNavBar(_ sender: Any) {
+        hideNavBar = true
+    }
+   
     func log(_ msg: String) {
         logLabel.text = msg
     }

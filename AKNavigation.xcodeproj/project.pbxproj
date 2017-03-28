@@ -15,6 +15,8 @@
 		DE2ABD041E891A3C00327307 /* AKBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ABD021E891A3C00327307 /* AKBaseViewController.swift */; };
 		DE2ABD051E891A3C00327307 /* AKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ABD031E891A3C00327307 /* AKNavigationController.swift */; };
 		DE2ABD071E891AC500327307 /* AKExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ABD061E891AC500327307 /* AKExtension.swift */; };
+		DE2ABD141E8A05F900327307 /* ak_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2ABD121E8A05F900327307 /* ak_back@2x.png */; };
+		DE2ABD151E8A05F900327307 /* ak_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2ABD131E8A05F900327307 /* ak_back@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		DE2ABD021E891A3C00327307 /* AKBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKBaseViewController.swift; sourceTree = "<group>"; };
 		DE2ABD031E891A3C00327307 /* AKNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKNavigationController.swift; sourceTree = "<group>"; };
 		DE2ABD061E891AC500327307 /* AKExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKExtension.swift; sourceTree = "<group>"; };
+		DE2ABD121E8A05F900327307 /* ak_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ak_back@2x.png"; sourceTree = "<group>"; };
+		DE2ABD131E8A05F900327307 /* ak_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ak_back@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +78,22 @@
 		DE2ABD011E89195600327307 /* Src */ = {
 			isa = PBXGroup;
 			children = (
+				DE2ABD111E8A05F900327307 /* Resources */,
 				DE2ABD021E891A3C00327307 /* AKBaseViewController.swift */,
 				DE2ABD031E891A3C00327307 /* AKNavigationController.swift */,
 				DE2ABD061E891AC500327307 /* AKExtension.swift */,
 			);
 			path = Src;
 			sourceTree = SOURCE_ROOT;
+		};
+		DE2ABD111E8A05F900327307 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE2ABD121E8A05F900327307 /* ak_back@2x.png */,
+				DE2ABD131E8A05F900327307 /* ak_back@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -143,7 +157,9 @@
 			files = (
 				DE2ABCFA1E8917F900327307 /* LaunchScreen.storyboard in Resources */,
 				DE2ABCF71E8917F900327307 /* Assets.xcassets in Resources */,
+				DE2ABD151E8A05F900327307 /* ak_back@3x.png in Resources */,
 				DE2ABCF51E8917F900327307 /* Main.storyboard in Resources */,
+				DE2ABD141E8A05F900327307 /* ak_back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

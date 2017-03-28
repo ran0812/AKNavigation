@@ -271,7 +271,7 @@ class AKBaseViewController: UIViewController {
             navigationController!.viewControllers.last == self &&
             leftTitle == nil &&
             leftImage == nil{
-            leftImage = UIImage(named: "ic_chevron_left")
+            leftImage = UIImage(named: "ak_back")
         }
         
         if leftTitle == nil && leftImage == nil {

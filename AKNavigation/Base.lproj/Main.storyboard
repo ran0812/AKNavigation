@@ -53,10 +53,17 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wj-1w-k8q">
-                                <rect key="frame" x="16" y="160" width="237" height="30"/>
-                                <state key="normal" title="setNavigationBarBackgroundColor"/>
+                                <rect key="frame" x="16" y="160" width="108" height="30"/>
+                                <state key="normal" title="setNavBarColor"/>
                                 <connections>
                                     <action selector="_setNavigationBarBackgroundColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cXB-Ux-2Lq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTS-32-KDb">
+                                <rect key="frame" x="233" y="160" width="113" height="30"/>
+                                <state key="normal" title="setNavBarImage"/>
+                                <connections>
+                                    <action selector="_setNavigationBarBackgroundImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T8I-tz-DP8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9om-4d-ZpD">
@@ -116,18 +123,37 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9h-fr-Zw9">
-                                <rect key="frame" x="16" y="350" width="99" height="30"/>
-                                <state key="normal" title="pushNewPage"/>
+                                <rect key="frame" x="266" y="350" width="80" height="30"/>
+                                <state key="normal" title="hideNavBar"/>
                                 <connections>
-                                    <action selector="_pushNewPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jwa-Eb-p9R"/>
+                                    <action selector="_hideNavBar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g8F-nG-mSU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saw-dx-nmd">
-                                <rect key="frame" x="171" y="403" width="33" height="16"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zG8-18-eer">
+                                <rect key="frame" x="16" y="350" width="118" height="30"/>
+                                <state key="normal" title="changeStatusBar"/>
+                                <connections>
+                                    <action selector="_changeStatusBarStyle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mKW-sr-ivS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ied-Zz-JgS">
+                                <rect key="frame" x="60" y="397" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saw-dx-nmd">
+                                <rect key="frame" x="171" y="482" width="33" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofb-EU-QRB">
+                                <rect key="frame" x="16" y="388" width="98" height="30"/>
+                                <state key="normal" title="pushNewView"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="YZP-gl-o6z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -135,16 +161,19 @@
                             <constraint firstItem="rpj-gK-dvW" firstAttribute="top" secondItem="9om-4d-ZpD" secondAttribute="bottom" constant="8" id="12Y-2e-x5f"/>
                             <constraint firstItem="l3C-L8-PZX" firstAttribute="top" secondItem="HOg-DR-mlS" secondAttribute="bottom" constant="8" id="16j-RU-CY8"/>
                             <constraint firstItem="m5B-XM-FQG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="4r8-7i-1oF"/>
-                            <constraint firstItem="F9h-fr-Zw9" firstAttribute="leading" secondItem="btT-Aa-wcp" secondAttribute="leading" id="6ek-oi-30q"/>
+                            <constraint firstItem="fTS-32-KDb" firstAttribute="top" secondItem="ac2-rb-pxF" secondAttribute="bottom" constant="8" id="5a9-aR-YXs"/>
                             <constraint firstAttribute="leadingMargin" secondItem="m5B-XM-FQG" secondAttribute="leading" id="7Iz-1w-ij9"/>
+                            <constraint firstItem="ofb-EU-QRB" firstAttribute="leading" secondItem="zG8-18-eer" secondAttribute="leading" id="CAl-C5-Vx6"/>
                             <constraint firstItem="l3C-L8-PZX" firstAttribute="trailing" secondItem="HOg-DR-mlS" secondAttribute="trailing" id="DLL-8a-P0z"/>
                             <constraint firstItem="ac2-rb-pxF" firstAttribute="leading" secondItem="m5B-XM-FQG" secondAttribute="leading" id="DOR-BU-Uh5"/>
                             <constraint firstItem="btT-Aa-wcp" firstAttribute="top" secondItem="rpj-gK-dvW" secondAttribute="bottom" constant="8" id="FAQ-Gq-JaE"/>
-                            <constraint firstItem="saw-dx-nmd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G46-Mb-d4p"/>
                             <constraint firstItem="3wj-1w-k8q" firstAttribute="top" secondItem="ac2-rb-pxF" secondAttribute="bottom" constant="8" id="GEh-2f-gxJ"/>
                             <constraint firstItem="rpj-gK-dvW" firstAttribute="leading" secondItem="9om-4d-ZpD" secondAttribute="leading" id="Ied-CM-UvI"/>
+                            <constraint firstItem="F9h-fr-Zw9" firstAttribute="top" secondItem="EEw-Xc-ajY" secondAttribute="bottom" constant="8" id="Q12-ke-w41"/>
+                            <constraint firstItem="ofb-EU-QRB" firstAttribute="top" secondItem="zG8-18-eer" secondAttribute="bottom" constant="8" id="UsU-jZ-Kx4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Un-ok-Etu" secondAttribute="trailing" constant="13" id="UuK-RT-Q2P"/>
                             <constraint firstItem="HOg-DR-mlS" firstAttribute="top" secondItem="5Un-ok-Etu" secondAttribute="bottom" constant="8" id="adH-08-0GF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fTS-32-KDb" secondAttribute="trailing" constant="13" id="fI3-9q-ljM"/>
                             <constraint firstItem="3wj-1w-k8q" firstAttribute="leading" secondItem="ac2-rb-pxF" secondAttribute="leading" id="fwd-YM-bD7"/>
                             <constraint firstItem="9om-4d-ZpD" firstAttribute="top" secondItem="Aev-XD-gxO" secondAttribute="bottom" constant="8" id="iEB-co-hYU"/>
                             <constraint firstItem="Aev-XD-gxO" firstAttribute="leading" secondItem="3wj-1w-k8q" secondAttribute="leading" id="lR9-3E-OOH"/>
@@ -152,10 +181,11 @@
                             <constraint firstItem="btT-Aa-wcp" firstAttribute="leading" secondItem="rpj-gK-dvW" secondAttribute="leading" id="n2J-DW-H9S"/>
                             <constraint firstItem="HOg-DR-mlS" firstAttribute="trailing" secondItem="5Un-ok-Etu" secondAttribute="trailing" id="oE1-Yl-fU6"/>
                             <constraint firstItem="ac2-rb-pxF" firstAttribute="top" secondItem="m5B-XM-FQG" secondAttribute="bottom" constant="8" id="pmE-fQ-AEQ"/>
+                            <constraint firstItem="F9h-fr-Zw9" firstAttribute="trailing" secondItem="EEw-Xc-ajY" secondAttribute="trailing" id="qd5-I9-vaJ"/>
                             <constraint firstItem="5Un-ok-Etu" firstAttribute="top" secondItem="3wj-1w-k8q" secondAttribute="bottom" constant="8" id="rez-w2-OeC"/>
-                            <constraint firstItem="F9h-fr-Zw9" firstAttribute="top" secondItem="btT-Aa-wcp" secondAttribute="bottom" constant="8" id="taH-7D-eM6"/>
                             <constraint firstItem="EEw-Xc-ajY" firstAttribute="trailing" secondItem="l3C-L8-PZX" secondAttribute="trailing" id="u7B-po-nZQ"/>
-                            <constraint firstItem="saw-dx-nmd" firstAttribute="top" secondItem="F9h-fr-Zw9" secondAttribute="bottom" constant="23" id="ymo-8a-TP2"/>
+                            <constraint firstItem="zG8-18-eer" firstAttribute="leading" secondItem="btT-Aa-wcp" secondAttribute="leading" id="xI8-C4-1dl"/>
+                            <constraint firstItem="zG8-18-eer" firstAttribute="top" secondItem="btT-Aa-wcp" secondAttribute="bottom" constant="8" id="zfa-TT-TKL"/>
                             <constraint firstItem="9om-4d-ZpD" firstAttribute="leading" secondItem="Aev-XD-gxO" secondAttribute="leading" id="zh1-57-s7Q"/>
                         </constraints>
                     </view>
@@ -169,4 +199,7 @@
             <point key="canvasLocation" x="-935" y="-63"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="M1a-dD-BCi"/>
+    </inferredMetricsTieBreakers>
 </document>
