@@ -18,7 +18,7 @@ enum AKStatusBarStyle {
     case dark
 }
 
-class AKNavigationItem {
+public class AKNavigationItem {
     var title: String = ""
     var image: UIImage?
     var action: (()->Void)?
@@ -40,7 +40,7 @@ class AKNavigationItem {
     }
 }
 
-class AKBaseViewController: UIViewController {
+public class AKBaseViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -247,7 +247,7 @@ class AKBaseViewController: UIViewController {
         initParameters()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initParameters()
     }
@@ -261,7 +261,7 @@ class AKBaseViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ApplicationWillResignActive), name:.UIApplicationWillResignActive, object: nil)
     }
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
@@ -293,13 +293,13 @@ class AKBaseViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override public func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.navTitleLabel.isHidden = false // fix bug of layout
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         updateStatusBarInCurrentViewControllerOrNavigationController()
@@ -314,7 +314,7 @@ class AKBaseViewController: UIViewController {
         }
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    override public var preferredStatusBarStyle: UIStatusBarStyle {
         switch statusBarStyle {
         case .dark: return .default
         case .light: return .lightContent

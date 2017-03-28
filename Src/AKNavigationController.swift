@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AKNavigationController: UINavigationController,UINavigationControllerDelegate,UIGestureRecognizerDelegate {
+public class AKNavigationController: UINavigationController,UINavigationControllerDelegate,UIGestureRecognizerDelegate {
     
     // MARK: statusbar style
     var statusBarStyle: AKStatusBarStyle = .dark {
@@ -17,7 +17,7 @@ class AKNavigationController: UINavigationController,UINavigationControllerDeleg
         }
     }
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         navigationBar.setBackgroundImage(UIImage.image(from: UIColor.clear), for: .default)
@@ -28,16 +28,16 @@ class AKNavigationController: UINavigationController,UINavigationControllerDeleg
         delegate = wearSelf
     }
 
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+    override public func pushViewController(_ viewController: UIViewController, animated: Bool) {
         interactivePopGestureRecognizer?.isEnabled = false
         super.pushViewController(viewController, animated: animated)
     }
     
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         interactivePopGestureRecognizer?.isEnabled = viewControllers.count > 1
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    override public var preferredStatusBarStyle: UIStatusBarStyle {
         switch statusBarStyle {
         case .dark: return .default
         case .light: return .lightContent
