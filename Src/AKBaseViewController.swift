@@ -40,7 +40,7 @@ public class AKNavigationItem {
     }
 }
 
-public class AKBaseViewController: UIViewController {
+open class AKBaseViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -261,7 +261,7 @@ public class AKBaseViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ApplicationWillResignActive), name:.UIApplicationWillResignActive, object: nil)
     }
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
@@ -293,13 +293,13 @@ public class AKBaseViewController: UIViewController {
         }
     }
     
-    override public func viewDidAppear(_ animated: Bool) {
+    override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.navTitleLabel.isHidden = false // fix bug of layout
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         updateStatusBarInCurrentViewControllerOrNavigationController()
@@ -314,7 +314,7 @@ public class AKBaseViewController: UIViewController {
         }
     }
     
-    override public var preferredStatusBarStyle: UIStatusBarStyle {
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
         switch statusBarStyle {
         case .dark: return .default
         case .light: return .lightContent
