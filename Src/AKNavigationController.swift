@@ -16,10 +16,10 @@ public class AKNavigationController: UINavigationController,UINavigationControll
             setNeedsStatusBarAppearanceUpdate()
         }
     }
-
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationBar.setBackgroundImage(UIImage.image(from: UIColor.clear), for: .default)
         navigationBar.barStyle = .black
         navigationBar.isTranslucent = true
@@ -27,7 +27,7 @@ public class AKNavigationController: UINavigationController,UINavigationControll
         interactivePopGestureRecognizer?.delegate = wearSelf
         delegate = wearSelf
     }
-
+    
     override public func pushViewController(_ viewController: UIViewController, animated: Bool) {
         interactivePopGestureRecognizer?.isEnabled = false
         super.pushViewController(viewController, animated: animated)

@@ -13,7 +13,7 @@ let kTabBarHeight: CGFloat = 49
 let KScreenWidth: CGFloat = UIScreen.main.bounds.size.width
 let KScreenHeight: CGFloat = UIScreen.main.bounds.size.height
 
-enum AKStatusBarStyle {
+public enum AKStatusBarStyle {
     case light
     case dark
 }
@@ -47,26 +47,26 @@ open class AKBaseViewController: UIViewController {
     }
     
     // MARK: statusbar style
-    var statusBarStyle: AKStatusBarStyle = .light { // MARK:here to change default statusbar style
+    public var statusBarStyle: AKStatusBarStyle = .light { // MARK:here to change default statusbar style
         didSet {
             updateStatusBarInCurrentViewControllerOrNavigationController()
         }
     }
     
     // MARK: navbar hidden
-    var hideNavBar: Bool = false {
+    public var hideNavBar: Bool = false {
         didSet {
             navBar.isHidden = hideNavBar
         }
     }
     
-    var hideNavSepLine: Bool = false {
+    public var hideNavSepLine: Bool = false {
         didSet {
             sepLine.isHidden = hideNavSepLine
         }
     }
     
-    lazy var navBar: UIImageView = {
+    public lazy var navBar: UIImageView = {
         let bar = UIImageView(frame:CGRect(x:0, y:0, width:self.view.frame.size.width, height:kNavigationBarHeight))
         bar.autoresizingMask = .flexibleWidth
         bar.backgroundColor = UIColor.white
@@ -82,14 +82,14 @@ open class AKBaseViewController: UIViewController {
         return line
     }()
     
-    var navBarBackgroundColor: UIColor? {
+    public var navBarBackgroundColor: UIColor? {
         didSet {
             navBar.image = nil
             navBar.backgroundColor = navBarBackgroundColor
         }
     }
     
-    var navBarBackgroundImage: UIImage? {
+    public var navBarBackgroundImage: UIImage? {
         didSet {
             if let _ = navBarBackgroundImage {
                 navBar.image = navBarBackgroundImage
@@ -106,7 +106,7 @@ open class AKBaseViewController: UIViewController {
         return title
     }()
     
-    var navTitle: String? {
+    public var navTitle: String? {
         didSet {
             navTitleLabel.numberOfLines = 1
             navTitleLabel.text = navTitle
@@ -116,7 +116,7 @@ open class AKBaseViewController: UIViewController {
         }
     }
     
-    var navAttributeTitle: NSAttributedString? {
+    public var navAttributeTitle: NSAttributedString? {
         didSet {
             navTitleLabel.numberOfLines = 0
             navTitleLabel.adjustsFontSizeToFitWidth = true
@@ -126,14 +126,14 @@ open class AKBaseViewController: UIViewController {
         }
     }
     
-    var navTitleColor: UIColor = UIColor.white { // MARK:here to change default nav title color
+    public var navTitleColor: UIColor = UIColor.white { // MARK:here to change default nav title color
         didSet {
             navTitleLabel.textColor = navTitleColor
         }
     }
     
     // MARK: left bar button item
-    var leftTitle: String? {
+    public var leftTitle: String? {
         didSet {
             if leftTitle != nil && !leftTitle!.isEmpty {
                 navigationItem.leftBarButtonItem = UIBarButtonItem(title: leftTitle, style: .plain, target: self, action: #selector(navLeft))
@@ -144,7 +144,7 @@ open class AKBaseViewController: UIViewController {
         }
     }
     
-    var leftImage: UIImage? {
+    public var leftImage: UIImage? {
         didSet {
             if let _ = leftImage {
                 navigationItem.leftBarButtonItem = UIBarButtonItem(image: leftImage, style: .plain, target: self, action: #selector(navLeft))
@@ -155,7 +155,7 @@ open class AKBaseViewController: UIViewController {
         }
     }
     
-    var leftItems: [AKNavigationItem]? {
+    public var leftItems: [AKNavigationItem]? {
         didSet {
             if leftItems != nil && !leftItems!.isEmpty {
                 var barButtonItems = [UIBarButtonItem]()
@@ -177,7 +177,7 @@ open class AKBaseViewController: UIViewController {
         }
     }
     
-    var leftButtonColor: UIColor = UIColor.white { // MARK:here to change default left bar color
+    public var leftButtonColor: UIColor = UIColor.white { // MARK:here to change default left bar color
         didSet {
             if let _ = navigationItem.leftBarButtonItems {
                 for item in navigationItem.leftBarButtonItems! {
@@ -188,7 +188,7 @@ open class AKBaseViewController: UIViewController {
     }
     
     // MARK: right bar button item
-    var rightTitle: String? {
+    public var rightTitle: String? {
         didSet {
             if rightTitle != nil && !rightTitle!.isEmpty {
                 navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightTitle, style: .plain, target: self, action: #selector(navRight))
@@ -199,7 +199,7 @@ open class AKBaseViewController: UIViewController {
         }
     }
     
-    var rightImage: UIImage? {
+    public var rightImage: UIImage? {
         didSet {
             if let _ = rightImage {
                 navigationItem.rightBarButtonItem = UIBarButtonItem(image: rightImage, style: .plain, target: self, action: #selector(navRight))
@@ -210,7 +210,7 @@ open class AKBaseViewController: UIViewController {
         }
     }
     
-    var rightItems: [AKNavigationItem]? {
+    public var rightItems: [AKNavigationItem]? {
         didSet {
             if rightItems != nil && !rightItems!.isEmpty {
                 var barButtonItems = [UIBarButtonItem]()
@@ -232,7 +232,7 @@ open class AKBaseViewController: UIViewController {
         }
     }
     
-    var rightButtonColor: UIColor = UIColor.white { // MARK:here to change default right bar color
+    public var rightButtonColor: UIColor = UIColor.white { // MARK:here to change default right bar color
         didSet {
             if let _ = navigationItem.rightBarButtonItems {
                 for item in navigationItem.rightBarButtonItems! {
@@ -242,7 +242,7 @@ open class AKBaseViewController: UIViewController {
         }
     }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         initParameters()
     }
@@ -260,17 +260,17 @@ open class AKBaseViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ApplicationDidBecomeActive), name:.UIApplicationDidBecomeActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ApplicationWillResignActive), name:.UIApplicationWillResignActive, object: nil)
     }
-
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
         
-        if navigationController != nil &&
-            navigationController!.viewControllers.count > 1 &&
-            navigationController!.viewControllers.last == self &&
-            leftTitle == nil &&
-            leftImage == nil{
+        if navigationController != nil,
+            navigationController!.viewControllers.count > 1,
+            navigationController!.viewControllers.last == self,
+            leftTitle == nil,
+            leftImage == nil {
             leftImage = UIImage(named: "ak_back")
         }
         

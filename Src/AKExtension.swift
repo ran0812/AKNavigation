@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     
-    class func image(from color:UIColor) -> UIImage {
+    class public func image(from color:UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width:1, height:1), false, 0)
         let context = UIGraphicsGetCurrentContext()
         context?.setFillColor(color.cgColor)
@@ -23,7 +23,7 @@ extension UIImage {
 
 extension UIColor {
     
-    class func hex(from hex: UInt) -> UIColor {
+    class public func hex(from hex: UInt) -> UIColor {
         let a = CGFloat((hex >> 24) & 0xFF)
         let r = CGFloat((hex >> 16) & 0xFF)
         let g = CGFloat((hex >> 8) & 0xFF)
@@ -31,7 +31,7 @@ extension UIColor {
         return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a / 255.0)
     }
     
-    class func hexString(from hexString: String) -> UIColor {
+    class public func hexString(from hexString: String) -> UIColor {
         var cString:String = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         if cString.hasPrefix("#") {
             cString = cString.substring(from: cString.index(after: cString.startIndex))
