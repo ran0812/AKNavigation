@@ -18,17 +18,17 @@ public enum AKStatusBarStyle {
     case dark
 }
 
-public class AKNavigationItem {
+open class AKNavigationItem {
     var title: String = ""
     var image: UIImage?
     var action: (()->Void)?
     
-    init(_ title: String, action:@escaping ()->Void) {
+    public init(_ title: String, action:@escaping ()->Void) {
         self.title = title
         self.action = action
     }
     
-    init(_ image: UIImage?, action:@escaping ()->Void) {
+    public init(_ image: UIImage?, action:@escaping ()->Void) {
         self.image = image
         self.action = action
     }

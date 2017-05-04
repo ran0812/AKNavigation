@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AKNavigation"
-  s.version      = "1.0.2"
+  s.version      = "1.0.4"
   s.summary      = "iOS navigation framework written by swift"
 
   s.description  = <<-DESC

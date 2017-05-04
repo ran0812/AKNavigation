@@ -23,6 +23,7 @@ public class AKNavigationController: UINavigationController,UINavigationControll
         navigationBar.setBackgroundImage(UIImage.image(from: UIColor.clear), for: .default)
         navigationBar.barStyle = .black
         navigationBar.isTranslucent = true
+        navigationBar.layer.masksToBounds = true
         weak var wearSelf = self
         interactivePopGestureRecognizer?.delegate = wearSelf
         delegate = wearSelf
