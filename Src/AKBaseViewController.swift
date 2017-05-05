@@ -13,6 +13,11 @@ let kTabBarHeight: CGFloat = 49
 let KScreenWidth: CGFloat = UIScreen.main.bounds.size.width
 let KScreenHeight: CGFloat = UIScreen.main.bounds.size.height
 
+protocol AKNavigationAnimator {
+    func pushAnimator() -> UIViewControllerAnimatedTransitioning?
+    func popAnimator() -> UIViewControllerAnimatedTransitioning?
+}
+
 public enum AKStatusBarStyle {
     case light
     case dark
@@ -40,11 +45,13 @@ open class AKNavigationItem {
     }
 }
 
-open class AKBaseViewController: UIViewController {
+open class AKBaseViewController: UIViewController, AKNavigationAnimator {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    public var disableIneractionGesture: Bool = false
     
     // MARK: statusbar style
     public var statusBarStyle: AKStatusBarStyle = .light { // MARK:here to change default statusbar style
@@ -352,5 +359,10 @@ extension AKBaseViewController {
     func ApplicationWillResignActive() {
         
     }
+}
+
+extension AKBaseViewController {
+    open func pushAnimator() -> UIViewControllerAnimatedTransitioning? { return nil }
+    open func popAnimator() -> UIViewControllerAnimatedTransitioning? { return nil }
 }
 

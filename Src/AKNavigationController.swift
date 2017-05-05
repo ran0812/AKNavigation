@@ -35,7 +35,26 @@ public class AKNavigationController: UINavigationController,UINavigationControll
     }
     
     public func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        interactivePopGestureRecognizer?.isEnabled = viewControllers.count > 1
+        var disableIneractionGesture = false
+        if let vc = viewController as? AKBaseViewController {
+            disableIneractionGesture = vc.disableIneractionGesture
+        }
+        interactivePopGestureRecognizer?.isEnabled = viewControllers.count > 1 && !disableIneractionGesture
+    }
+    
+    public func navigationController(_ navigationController: UINavigationController,
+                                     animationControllerFor operation: UINavigationControllerOperation,
+                                     from fromVC: UIViewController,
+                                     to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == .push, let vc = toVC as? AKBaseViewController {
+            return vc.pushAnimator()
+        }
+        
+        if operation == .pop, let vc = fromVC as? AKBaseViewController {
+            return vc.popAnimator()
+        }
+        
+        return nil
     }
     
     override public var preferredStatusBarStyle: UIStatusBarStyle {
