@@ -332,7 +332,7 @@ open class AKBaseViewController: UIViewController, AKNavigationAnimator {
 // MARK: need override
 extension AKBaseViewController {
     
-    func navLeft() {
+    @objc open func navLeft() {
         if navigationController != nil &&
             navigationController!.viewControllers.count > 1 &&
             navigationController!.viewControllers.last == self {
@@ -340,23 +340,23 @@ extension AKBaseViewController {
         }
     }
     
-    func navRight() {
+    @objc open func navRight() {
         
     }
     
-    func ApplicationWillEnterForeground() {
+    @objc open func ApplicationWillEnterForeground() {
         
     }
     
-    func ApplicationDidEnterBackground() {
+    @objc open func ApplicationDidEnterBackground() {
         
     }
     
-    func ApplicationDidBecomeActive() {
+    @objc open func ApplicationDidBecomeActive() {
         
     }
     
-    func ApplicationWillResignActive() {
+    @objc open func ApplicationWillResignActive() {
         
     }
 }
