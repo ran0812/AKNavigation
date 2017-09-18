@@ -35,7 +35,7 @@ class ViewController: AKBaseViewController {
     }
     
     @IBAction func _setNavigationBarBackgroundImage(_ sender: Any) {
-        
+        navBarBackgroundImage = #imageLiteral(resourceName: "nav_bg")
     }
 
     @IBAction func _setRightImage(_ sender: Any) {

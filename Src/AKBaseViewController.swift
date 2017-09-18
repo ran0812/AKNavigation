@@ -8,10 +8,11 @@
 
 import UIKit
 
-let kNavigationBarHeight: CGFloat = 64
 let kTabBarHeight: CGFloat = 49
 let KScreenWidth: CGFloat = UIScreen.main.bounds.size.width
 let KScreenHeight: CGFloat = UIScreen.main.bounds.size.height
+let isiPhoneX: Bool = KScreenWidth == 375 && KScreenHeight == 812
+let kNavigationBarHeight: CGFloat = isiPhoneX ? 88 : 64
 
 protocol AKNavigationAnimator {
     func pushAnimator() -> UIViewControllerAnimatedTransitioning?
