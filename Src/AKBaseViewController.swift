@@ -328,6 +328,9 @@ open class AKBaseViewController: UIViewController, AKNavigationAnimator {
         case .light: return .lightContent
         }
     }
+    
+    open func pushAnimator() -> UIViewControllerAnimatedTransitioning? { return nil }
+    open func popAnimator() -> UIViewControllerAnimatedTransitioning? { return nil }
 }
 
 // MARK: need override
@@ -360,10 +363,5 @@ extension AKBaseViewController {
     @objc open func ApplicationWillResignActive() {
         
     }
-}
-
-extension AKBaseViewController {
-    open func pushAnimator() -> UIViewControllerAnimatedTransitioning? { return nil }
-    open func popAnimator() -> UIViewControllerAnimatedTransitioning? { return nil }
 }
 
