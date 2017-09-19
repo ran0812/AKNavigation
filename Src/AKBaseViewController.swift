@@ -261,7 +261,6 @@ open class AKBaseViewController: UIViewController, AKNavigationAnimator {
     }
     
     func initParameters() {
-        self.hidesBottomBarWhenPushed = true
         self.automaticallyAdjustsScrollViewInsets = false
         NotificationCenter.default.addObserver(self, selector: #selector(ApplicationWillEnterForeground), name:.UIApplicationWillEnterForeground, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ApplicationDidEnterBackground), name:.UIApplicationDidEnterBackground, object: nil)

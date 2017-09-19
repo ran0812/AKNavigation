@@ -30,6 +30,7 @@ public class AKNavigationController: UINavigationController,UINavigationControll
     }
     
     override public func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        viewController.hidesBottomBarWhenPushed = viewControllers.count > 0
         interactivePopGestureRecognizer?.isEnabled = false
         super.pushViewController(viewController, animated: animated)
     }
